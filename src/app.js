@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const geocode = require("./utilities/geoLocation");
 const forecast = require("./utilities/forecast");
@@ -95,7 +96,7 @@ app.get('*', ( req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('El servidor está disponible en el puerto 3000')
+app.listen(port, () => {
+  console.log('El servidor está disponible en el puerto ' + port)
 })
 
